@@ -5,6 +5,21 @@
 #define SW_BTN_DOWN     SDLK_DOWN
 #define SW_BTN_LEFT     SDLK_LEFT
 #define SW_BTN_RIGHT    SDLK_RIGHT
+#ifdef MIYOO
+#define SW_BTN_A        SDLK_LALT
+#define SW_BTN_B        SDLK_LCTRL
+#define SW_BTN_X        SDLK_LSHIFT
+#define SW_BTN_Y        SDLK_SPACE
+#define SW_BTN_L1       SDLK_TAB
+#define SW_BTN_R1       SDLK_BACKSPACE
+#define SW_BTN_L2       SDLK_PAGEUP
+#define SW_BTN_R2       SDLK_PAGEDOWN
+#define SW_BTN_L3       SDLK_RALT
+#define SW_BTN_R3       SDLK_RSHIFT
+#define SW_BTN_SELECT   SDLK_ESCAPE
+#define SW_BTN_START    SDLK_RETURN
+#define SW_BTN_MENU     SDLK_RCTRL
+#else
 #define SW_BTN_A        SDLK_SPACE
 #define SW_BTN_B        SDLK_LCTRL
 #define SW_BTN_X        SDLK_LSHIFT
@@ -16,4 +31,5 @@
 #define SW_BTN_SELECT   SDLK_RCTRL
 #define SW_BTN_START    SDLK_RETURN
 #define SW_BTN_MENU     SDLK_ESCAPE
+#endif
 #define SW_BTN_POWER    SDLK_FIRST

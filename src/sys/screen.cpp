@@ -5,8 +5,13 @@
 
 static bool format_initialized = false;
 static SDL_PixelFormat format;
+#ifdef MIYOO
+short unsigned int SCREEN_WIDTH  = 320;
+short unsigned int SCREEN_HEIGHT = 240;
+#else
 short unsigned int SCREEN_WIDTH  = 640;
 short unsigned int SCREEN_HEIGHT = 480;
+#endif
 
 SDL_PixelFormat *get_render_surface_format()
 {
