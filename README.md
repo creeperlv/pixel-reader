@@ -1,8 +1,18 @@
 ## [Pixel Reader](https://github.com/ealang/pixel-reader)
 
-An ebook reader app for the Miyoo Mini. Supports epub and txt formats.
+An ebook reader app for the Miyoo Mini and MiyooCFW. Supports epub and txt formats.
 
 ![Screenshot](resources/demo.gif)
+
+## MiyooCFW Installation
+
+*It is presumed you are using the latest [MiyooCFW](https://github.com/TriForceX/MiyooCFW/) custom firmware on your device - version at least 2.0.0 BETAv3.*
+
+1. [Download the latest release package](https://github.com/Apaczer/pixel-reader/releases).
+1. Put IPK-package in your MAIN partition.
+2. **IPK:** Launch ``reader.ipk`` from GMenu2X's Explorer.
+
+The default location for book files is `/mnt/books`.
 
 ## Miyoo Mini Installation
 
@@ -29,6 +39,19 @@ make -j
 ```
 
 Find app in `build/reader`.
+
+### MiyooCFW docker Cross-Compile
+
+If you're trying to build for uClibc compatible image, use this method
+
+```sh
+git clone https://github.com/Apaczer/pixel-reader
+cd pixel-reader/
+docker pull miyoocfw/toolchain-shared-uclibc
+docker run --volume ./:/src/ -it miyoocfw/toolchain-shared-uclibc
+cd /src
+make CPPFLAGS="-DMIYOO -DUSER_FONTS"
+```
 
 ### Miyoo Mini Cross-Compile
 
