@@ -27,6 +27,15 @@ void discover_fonts()
         return std::filesystem::exists(file_path) && (norm_ext == ".ttf" || norm_ext == ".ttc");
     };
 
+    for (const auto &entry: directory_listing(CUSTOM_FONT_DIR))
+    {
+        std::filesystem::path path = std::filesystem::path(CUSTOM_FONT_DIR) / entry.name;
+        if (!entry.is_dir && test_font(path))
+        {
+            available_fonts.push_back(path.string());
+        }
+    }
+
     for (const auto &entry: directory_listing(FONT_DIR))
     {
         std::filesystem::path path = std::filesystem::path(FONT_DIR) / entry.name;

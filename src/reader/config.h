@@ -5,6 +5,8 @@
 
 #define IDLE_SAVE_TIME_SEC 60
 
+#define CUSTOM_FONT_DIR            "resources/fonts"
+
 #ifndef USER_FONTS
 #define FONT_DIR            "resources/fonts"
 #define DEFAULT_FONT_NAME   "resources/fonts/DejaVuSans.ttf"

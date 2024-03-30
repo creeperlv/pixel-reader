@@ -53,6 +53,16 @@ cd /src
 make CPPFLAGS="-DMIYOO -DUSER_FONTS"
 ```
 
+### MiyooCFW Cross-Compile with local toolchain
+
+If you are trying to build without docker, try this.
+
+Note: It is **NOT** necessary to be `/opt/miyoo-uclibc`, use your own path of the toolchain.
+
+```sh
+CROSS_COMPILE=/opt/miyoo-uclibc/bin/arm-miyoo-linux-uclibcgnueabi- SYSROOT=/opt/miyoo-uclibc/ CPPLAGS="-DMIYOO -DUSER_FONTS" make
+```
+
 ### Miyoo Mini Cross-Compile
 
 Cross-compile env is provided by [shauninman/union-miyoomini-toolchain](https://github.com/shauninman/union-miyoomini-toolchain). Docker is required.
