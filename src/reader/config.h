@@ -5,17 +5,17 @@
 
 #define IDLE_SAVE_TIME_SEC 60
 
-#define CUSTOM_FONT_DIR            "resources/fonts"
-
 #ifndef USER_FONTS
 #define FONT_DIR            "resources/fonts"
-#define DEFAULT_FONT_NAME   "resources/fonts/DejaVuSans.ttf"
-#define SYSTEM_FONT         "resources/fonts/DejaVuSansMono.ttf"
+#define EXTRA_FONT_DIR      ""
+#define CUSTOM_FONT_DIR     ""
 #else
 #define FONT_DIR            "/usr/share/fonts/dejavu"
-#define DEFAULT_FONT_NAME   "/usr/share/fonts/dejavu/DejaVuSans.ttf"
-#define SYSTEM_FONT         "/usr/share/fonts/dejavu/DejaVuSansMono.ttf"
+#define EXTRA_FONT_DIR      "/usr/share/fonts/liberation"
+#define CUSTOM_FONT_DIR     "fonts"
 #endif
+#define DEFAULT_FONT_NAME   FONT_DIR "/DejaVuSans.ttf"
+#define SYSTEM_FONT         FONT_DIR "/DejaVuSansMono.ttf"
 
 #ifdef MIYOO
 #define MIN_FONT_SIZE      6
@@ -41,7 +41,7 @@
     #define EXTRA_FONTS_LIST    {"/customer/app/wqy-microhei.ttc"}
 #elif defined(MIYOO)
     #define DEFAULT_BROWSE_PATH "/mnt/books/"
-    #define EXTRA_FONTS_LIST    {"/usr/share/fonts/liberation/LiberationMono-Bold.ttf", "/usr/share/fonts/liberation/LiberationSans-Regular.ttf", "/usr/share/fonts/liberation/LiberationSerif-Italic.ttf"}
+    #define EXTRA_FONTS_LIST    {"/mnt/gmenu2x/skins/Default/font.ttf"}
 #else
     #define DEFAULT_BROWSE_PATH std::filesystem::current_path() / ""
     #define EXTRA_FONTS_LIST    {}
